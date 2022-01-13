@@ -4,17 +4,13 @@
   - Implemente uma função que recebe o nome da key de um item da localStorage 
     e retorna o valor da key parseado para objeto javascript.
 */
-// const personalData = [
-//   {firstName: 'Marcos'},
-//   {lastName: 'Lima'},
-//   {city: 'Suzano'},
-// ]
-
-const personalData = ['Marcos', 'Lima', 'Suzano']
+const personalData = [
+  {firstName: 'Marcos'},
+  {lastName: 'Lima'},
+  {city: 'Suzano'},
+]
 
 const myData = JSON.stringify(personalData)
-
-console.log(typeof myData, myData)
 
 localStorage.setItem('myDataKey', myData)
 
@@ -24,7 +20,6 @@ const getKey = localStorage.getItem('myDataKey')
 
 console.log(parsingDataStorage(getKey))
 
-// localStorage.clear()
 /*
   02
 
@@ -40,9 +35,8 @@ console.log(parsingDataStorage(getKey))
 
 const input = document.querySelector('[data-js="input"]')
 
-input.addEventListener('input', event => {
-  console.log(typeof event.target.valueAsNumber)
-})
+input.addEventListener('input', event => 
+  console.log(typeof event.target.valueAsNumber))
 
 /*
   03
@@ -124,12 +118,6 @@ const searchAlbum = {
   genre: 'Rock'
 }
 
-// if (albums.includes(searchAlbum)) {
-  
-//   console.log(`${JSON.stringify(searchAlbum)} existe no array albums.`)
-// }
-
-
 //NA: Através da condicional 'if', detreminar se um objeto está incluído no array de objetos, exibir e converter em 'string' usando o método 'JSON'; Mas a referência ao objeto é o seu 'namespace' no método 'includes()', que torna-se inviável pois os objetos no array não estão nomeados; Uma solução é usar o identificador 'id' como referência;
 
 const searchID = albums
@@ -169,13 +157,6 @@ localStorage.setItem('objectCopy',objectCopied)
 
   Dica: pesquise por Object.entries.
 */
-/*
->>Object.entries(bobj): Retorna um array com as properties enumeradas e transformadas em arrays de pares de [key + value];
-
-// array like object with random key ordering
-const anObj = { 100: 'a', 2: 'b', 7: 'c' };
-console.log(Object.entries(anObj)); // [ ['2', 'b'], ['7', 'c'], ['100', 'a'] ]
-*/
 const newUL = document.querySelector(".newUL")
 
 const myObj = {
@@ -197,35 +178,6 @@ const newElement = (elementName, obj) => {
 }
 
 newElement('li', myObj)
-
-
-
-
-
-const [Key, Value] = Object.entries(myObj)
-console.log(`A chave é: ${Key} e o valor ${Value}`)
-
-
-
-
-
-
-
-
-// const newElement2 = (elementName, obj) => 
-//   newUL.innerHTML += `<${elementName}>[${obj}]</${elementName}`
-
-// newElement2('li', Object.entries(myObj))
-// console.log(Object.entries(myObj))
-
-// const newElement = () => {
-  
-//   const newLI = document.createElement("li")
-//   newLI.textContent = 'Novo elemento'
-//   newUL.append(newLI)
-// }
-
-// newElement()
 
 /*
   07
